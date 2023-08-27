@@ -1,5 +1,5 @@
 import datetime
-from typing import Optional, bool
+from typing import Optional
 
 
 class CustomisedError(Exception):
@@ -13,7 +13,7 @@ class SavedSnippets:
         self.today: Optional[datetime.datetime] = datetime.datetime.today()
         self.count: Optional[int] = None
         self.sum: Optional[int] = None
-    
+
     # region properties
     @property
     def count(self) -> int:
@@ -27,7 +27,7 @@ class SavedSnippets:
     @count.setter
     def count(self, value: int) -> None:
         self.count = value
-    
+
     @property
     def sum(self) -> int:
         """
@@ -40,14 +40,14 @@ class SavedSnippets:
     @sum.setter
     def sum(self, value: int) -> None:
         self.sum = value
-        
+
     # endregion
-    
+
     # region code snippets
     def check_given_number_is_armstorng(self, num: int) -> bool:
         """
         Verifies the given number is a valid armstrong number or not.
-        
+
         Args:
             num (int): input number value
 
@@ -55,13 +55,13 @@ class SavedSnippets:
             bool: status of the number is armstrong or not.
         """
         temp_num = num
-        self.sum = 0 
+        self.sum = 0
 
         while temp_num > 0:
             c = temp_num % 10
             self.sum += c**3
             temp_num //= 10
-        
+
         return self.sum == num
 
     # endregion
